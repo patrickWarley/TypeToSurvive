@@ -1,0 +1,194 @@
+.screen {
+  width: 800px;
+  height: 500px;
+  padding: 1px;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+#word {
+  clear: both;
+}
+
+#controls {}
+
+#progressBar {
+  width: 0%;
+}
+
+
+/*start screen*/
+#startScreen {
+  z-index: 10;
+}
+
+#startScreen p,
+h1 {
+  text-align: center;
+}
+
+#header {
+  font-family: 'Butcherman';
+  font-size: 60px;
+  margin: 150px 100px 50px 100px;
+  animation-name: pulsing;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulsing {
+  from {
+    color: black;
+  }
+
+  to {
+    color: red;
+    font-size: 70px;
+  }
+}
+
+#info {}
+
+#instructions {
+  font-weight: bold;
+}
+
+/*game screen*/
+#zombieBackground {
+  background-image: url("http://thecontextofthings.com/wp-content/uploads/2015/05/164531-zombies-zombie-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(16px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#game2 {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+#wordPainel {
+  width: 100%;
+  clear: both;
+}
+
+#painel {
+  width: 100%;
+  clear: both;
+}
+
+/*info bar*/
+#painel ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+#painel ul li {
+  float: left;
+}
+
+#painel ul li {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#word {
+  text-align: center;
+  font-size: 60px;
+}
+
+#controls {
+  clear: both;
+  padding-top: 100px;
+}
+
+#controls input {
+  width: 80%;
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+#controls input:focus {
+  background-color: red;
+}
+
+#hits {}
+
+#errors {}
+
+#currentLevel {}
+
+/*Gameover*/
+#gameOver {
+  z-index: 10;
+}
+
+#result {
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  font-weight: bold;
+}
+
+#result h3 {
+  margin: 3px;
+}
+
+#msgGameOver {
+  font-size: 100px;
+  font-family: 'Butcherman';
+  animation-name: gameover;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes gameover {
+  from {
+    text-shadow: 0px 0px black;
+  }
+
+  to {
+    text-shadow: 4px 4px black;
+  }
+}
+
+#gameOver #zombieBackground {
+  filter: blur(0px);
+  animation-name: gray;
+  animation-duration: 16s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes gray {
+  from {
+    filter: grayscale(0%);
+  }
+
+  to {
+    filter: grayscale(100%);
+  }
+}

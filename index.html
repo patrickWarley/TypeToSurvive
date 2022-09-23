@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Type to survive</title>
+  <link href='https://fonts.googleapis.com/css?family=Butcherman' rel='stylesheet'>
+</head>
+
+<body>
+  <audio id="heart" src="https://soundbible.com/mp3/baby-heartbeat-daniel_simon.mp3" preload="auto"></audio>
+
+  <div id="startScreen" class="screen">
+    Sound:<span onclick="soundOn(false);">On</span> <span onclick="soundOn(true);">Off</span>
+    <h1 id="header">Click to start</h1>
+    <p id="info">This is a game based on the "The Typing of the Dead" made as a exercise in javascript, css, and html5!
+    </p>
+    <p id="instructions">
+      The challenge is to get to highest level possible.<br>
+      You will level up after a number of hits.<br>
+      A hit is a word typed right inside the time limit.<br>
+      Each level increase the number of letters in the words by 1 starting from 3. <br>Good luck!
+    </p>
+  </div>
+
+  <div id="game" style="position:relative;" class="screen hide">
+    <div id="zombieBackground"></div>
+    <div id="game2" class="screen">
+      <nav id="painel">
+        <ul>
+          <li><a>LevelUp in: <span id="hits"></span></a></li>
+          <li><a>Errors: <span id="errors"></span></a></li>
+          <li><a>Level: <span id="currentLevel"></span></a></li>
+        </ul>
+      </nav>
+      <div id="wordPainel">
+        <h2 id="word"></h2>
+      </div>
+      <div id="controls">
+        <input type="text" id="typedWord" autofocus="true" autocomplete="off" />
+      </div>
+    </div>
+  </div>
+
+  <div id="gameOver" style="position:relative;" class="hide screen">
+    <div id="zombieBackground" style=""></div>
+    <div id="game2" class="screen">
+      <h1 id="msgGameOver">You lost</h1>
+      <div id="result">
+        <h3><span id="higherScore"></span></h3>
+        <h3>Level: <span id="endLevel"></span></h3>
+        <h3>Hits: <span id="endHits"></span></h3>
+        <h3>Errors: <span id="endErrors"></span></h3>
+        <h2 onclick="restart();">Restart</h2>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
