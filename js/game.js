@@ -181,6 +181,7 @@ function soundOn(option) {
   audio.muted = option;
 }
 
+//let's try again
 function checkLevelUp() {
   if (hits == hitsToLevelUP) {
     currentLevel++;
