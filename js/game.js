@@ -1,20 +1,21 @@
 window.onload = init;
 
 //variable just to salve the blur of the background image for later use
-var blur = 16;
+const blur = 16;
 
 var typedWord, currentWord;
 var currentLevel = errors = hits = totalHits = 0;
-var hitsToLevelUP = 10;
-var msgGameOver = "You lost";
+const hitsToLevelUP = 10;
+const msgGameOver = "You lost";
+
 //screens
-var screens = new Object();
+const screens = new Object();
 screens["Start"] = "#startScreen";
 screens["Game"] = "#game";
 screens["GameOver"] = "#gameOver";
 
 //How much time you have to type the word
-var time = 4100;
+const time = 4100;
 
 //function for saving the Timeout function
 var timeOut;
@@ -33,7 +34,7 @@ timer.stop = function () {
 //words
 //gotta find a better way to choose the words
 //hehehe
-var words = [];
+const words = [];
 words[0] = ["flu", "rob", "use", "aid", "tap", "sum", "lay", "boy", "fan", "fee", "fly", "dry", "tip", "bat", "pig", "bus", "ice", "low", "set", "buy", "end", "cat", "ant", "map", "hot", "ear", "jam", "get", "cut", "owe"];
 words[1] = ["fork", "gate", "sock", "hook", "salt", "flex", "lock", "sigh", "food", "easy", "wire", "foot", "time", "fuss", "fade", "moon", "move", "good", "soar", "shop", "trip", "calf", "suit", "form", "mark", "lose", "host", "mind", "page", "horn"];
 words[2] = ["story", "thick", "fault", "build", "thank", "crown", "slice", "judge", "elbow", "alive", "shell", "money", "reign", "peace", "jelly", "chaos", "enjoy", "salon", "cabin", "hobby", "final", "blind", "night", "spine", "smart", "joint", "knife", "slave", "union", "unity"];
@@ -45,7 +46,7 @@ words[7] = ["memorandum", "distortion", "chimpanzee", "tournament", "population"
 
 
 function init() {
-  var startScreen = document.querySelector("#startScreen");
+  let startScreen = document.querySelector("#startScreen");
   startScreen.addEventListener("mouseover", function () {
     var audio = document.querySelector("#heart");
     audio.loop = true;
@@ -190,15 +191,16 @@ function checkLevelUp() {
 
     //if the current level is equal the length of the array with the words
     //there are no more words
-    if (currentLevel == words.length) {
-      gameOver("Maximum level!!");
-    } else {
-      chooseWord();
-    }
+    if (currentLevel == words.length) return gameOver("Maximum level!!");
 
+    chooseWord();
   }
 }
 
 function levelUpAnimation() {
-  document.querySelector("#currentLevel").classList.add("LevelUp");
+  document.querySelector("#currentLevel").classList.add("levelup");
+
+  window.setTimeout(() => {
+    document.querySelector("#currentLevel").classList.remove("levelup");
+  }, 2000);
 }

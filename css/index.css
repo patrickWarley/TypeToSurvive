@@ -4,7 +4,6 @@
   padding: 1px;
   margin: 0 auto;
   background-color: black;
-  color: white;
   color: red;
 }
 
@@ -136,6 +135,18 @@ h1 {
   background-color: red;
 }
 
+/*Level up animation*/
+.levelup {
+  /*
+  Idea for the animation
+  - it can be something in the page around the game screen
+  - I can make the interface a lot more interesting
+  - something like a 3d game console maybe?
+  - I really want to add a 3d effect
+  - can I implement it for mobile fones?
+  */
+}
+
 #hits {}
 
 #errors {}
@@ -152,6 +163,8 @@ h1 {
   text-align: center;
   text-shadow: 2px 2px black;
   font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
 }
 
 #result h3 {
