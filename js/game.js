@@ -1,5 +1,8 @@
 window.onload = init;
 
+//I'm importing here but I can't use
+import { getWords } from "./words.js";
+
 //variable just to salve the blur of the background image for later use
 const blur = 16;
 
